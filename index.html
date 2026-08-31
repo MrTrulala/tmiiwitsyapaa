@@ -41,6 +41,35 @@
         }
         .music-btn:hover { transform: scale(1.05); background: #ffffff; }
 
+        /* --- MATAHARI & BURUNG TERBANG --- */
+        .sun {
+            position: absolute;
+            top: 4%;
+            left: 5%;
+            font-size: 50px;
+            z-index: 1;
+            animation: pulseSun 4s ease-in-out infinite alternate;
+        }
+        @keyframes pulseSun {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .bird {
+            position: absolute;
+            font-size: 22px;
+            z-index: 2;
+            animation: flyBird 16s linear infinite;
+        }
+        .bird1 { top: 8%; left: -60px; animation-delay: 0s; }
+        .bird2 { top: 12%; left: -100px; animation-delay: 5s; font-size: 18px; }
+
+        @keyframes flyBird {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(60vw, -15px); }
+            100% { transform: translate(calc(100vw + 120px), 10px); }
+        }
+
         /* --- ANIMASI LANGIT & GONDOLA --- */
         .cloud {
             position: absolute;
@@ -82,7 +111,7 @@
             100% { transform: translateX(calc(100vw + 150px)); }
         }
 
-        /* --- ANIMASI SUASANA TAMAN --- */
+        /* --- DEKORASI RAME: POHON, BUNGA, LEBAH, KUPU-KUPU --- */
         .park-landscape {
             position: absolute;
             bottom: 0;
@@ -94,23 +123,72 @@
             z-index: 2;
         }
 
+        /* Pepohonan Rimbun Tambahan */
         .tree {
             position: absolute;
             bottom: 110px;
-            font-size: 45px;
             z-index: 2;
         }
-        .tree1 { left: 5%; }
-        .tree2 { left: 25%; font-size: 55px; }
-        .tree3 { right: 12%; font-size: 50px; }
-        .flowers {
+        .tree1 { left: 2%; font-size: 50px; }
+        .tree2 { left: 15%; font-size: 65px; }
+        .tree3 { left: 28%; font-size: 45px; }
+        .tree4 { right: 25%; font-size: 60px; }
+        .tree5 { right: 10%; font-size: 50px; }
+        .tree6 { right: 2%; font-size: 55px; }
+
+        /* Hamparan Bunga */
+        .flower-row {
             position: absolute;
             bottom: 115px;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 26px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .bunny {
+            position: absolute;
+            bottom: 118px;
+            left: 45%;
+            font-size: 22px;
+            z-index: 3;
+        }
+
+        /* Kupu-Kupu BANYAK */
+        .butterfly {
+            position: absolute;
             font-size: 24px;
-            z-index: 2;
-            letter-spacing: 15px;
+            z-index: 5;
+            animation: flyButterfly 10s ease-in-out infinite alternate;
+        }
+        .bf1 { top: 35%; left: 8%; animation-duration: 9s; }
+        .bf2 { top: 48%; right: 12%; animation-delay: 2s; animation-duration: 11s; }
+        .bf3 { top: 28%; right: 30%; animation-delay: 4s; font-size: 20px; }
+        .bf4 { top: 55%; left: 22%; animation-delay: 1s; font-size: 22px; }
+
+        @keyframes flyButterfly {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(50px, -35px) rotate(15deg); }
+            100% { transform: translate(-30px, 25px) rotate(-10deg); }
+        }
+
+        /* Lebah Madu */
+        .bee {
+            position: absolute;
+            font-size: 20px;
+            z-index: 5;
+            animation: flyBee 7s ease-in-out infinite alternate;
+        }
+        .bee1 { bottom: 140px; left: 18%; }
+        .bee2 { bottom: 150px; right: 22%; animation-delay: 3s; }
+
+        @keyframes flyBee {
+            0% { transform: translate(0, 0); }
+            33% { transform: translate(30px, -20px); }
+            66% { transform: translate(-20px, 15px); }
+            100% { transform: translate(15px, -10px); }
         }
 
         /* --- ANIMASI JOGGING & SEPEDAAN BERDUA --- */
@@ -276,6 +354,9 @@
         <span id="musicIcon">🎵</span> <span id="musicText">Musik Off</span>
     </button>
 
+    <div class="sun">☀️</div>
+    <div class="bird bird1">🐦</div>
+    <div class="bird bird2">🐤</div>
     <div class="cloud cloud1"></div>
     <div class="cloud cloud2"></div>
     <div class="cable-line"></div>
@@ -284,8 +365,23 @@
     <div class="tree tree1">🌳</div>
     <div class="tree tree2">🌲</div>
     <div class="tree tree3">🌳</div>
-    <div class="flowers">🌸🌼🌺</div>
+    <div class="tree tree4">🌲</div>
+    <div class="tree tree5">🌳</div>
+    <div class="tree tree6">🌲</div>
+
+    <div class="flower-row">
+        <span>🌸</span><span>🌻</span><span>🌺</span><span>🌷</span><span>🌼</span><span>🌸</span><span>🌻</span>
+    </div>
+    <div class="bunny">🐰</div>
     
+    <div class="bee bee1">🐝</div>
+    <div class="bee bee2">🐝</div>
+
+    <div class="butterfly bf1">🦋</div>
+    <div class="butterfly bf2">🦋</div>
+    <div class="butterfly bf3">🦋</div>
+    <div class="butterfly bf4">🦋</div>
+
     <div class="jogging-couple">🏃‍♂️🏃‍♀️</div>
     <div class="cycling-couple">🚴‍♂️🚴‍♀️</div>
 
@@ -322,7 +418,7 @@
         <div class="stamp">APPROVED BY SYAFA</div>
         
         <div class="countdown-text">
-            Mengarahkan ke WhatsApp Ferdi dalam <span id="timer" class="timer-sec">10</span> detik...
+            Mengarahkan ke WhatsApp Ferdi dalam <span id="timer" class="timer-sec">8</span> detik...
         </div>
     </div>
 
@@ -347,7 +443,6 @@
             "Klik yang hijau aja!"
         ];
 
-        // Kontrol Audio / Musik
         function playMusicFirstTime() {
             if (!musicStarted) {
                 bgMusic.play().then(() => {
@@ -359,7 +454,7 @@
         }
 
         function toggleMusic(e) {
-            e.stopPropagation(); // Mencegah bentrok dengan body click
+            e.stopPropagation();
             if (bgMusic.paused) {
                 bgMusic.play();
                 musicStarted = true;
@@ -396,7 +491,7 @@
             document.getElementById('main-card').style.display = 'none';
             document.getElementById('ticket-card').style.display = 'block';
 
-            let timeLeft = 5;
+            let timeLeft = 8;
             const timerDisplay = document.getElementById('timer');
             
             const countdownInterval = setInterval(() => {
@@ -405,7 +500,7 @@
                 
                 if (timeLeft <= 0) {
                     clearInterval(countdownInterval);
-                    const message = encodeURIComponent("Halo Ferdi! Gua udah ACC proposal TMII-nya nih 🚡🚲. Yuk atur jadwal jalannya!");
+                    const message = encodeURIComponent("Mauuuuu 🚡🚲. Yuk atur jadwal jalannya!");
                     const waUrl = `https://wa.me/${myPhoneNumber}?text=${message}`;
                     window.location.href = waUrl;
                 }
